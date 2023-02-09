@@ -108,54 +108,6 @@ demo = {
 
   initDashboardPageCharts: function() {
 
-    gradientChartOptionsConfigurationWithTooltipBlue = {
-      maintainAspectRatio: false,
-      legend: {
-        display: false
-      },
-
-      tooltips: {
-        backgroundColor: '#f5f5f5',
-        titleFontColor: '#333',
-        bodyFontColor: '#666',
-        bodySpacing: 4,
-        xPadding: 12,
-        mode: "nearest",
-        intersect: 0,
-        position: "nearest"
-      },
-      responsive: true,
-      scales: {
-        yAxes: [{
-          barPercentage: 1.6,
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.0)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
-            padding: 20,
-            fontColor: "#2380f7"
-          }
-        }],
-
-        xAxes: [{
-          barPercentage: 1.6,
-          gridLines: {
-            drawBorder: false,
-            color: 'rgba(29,140,248,0.1)',
-            zeroLineColor: "transparent",
-          },
-          ticks: {
-            padding: 20,
-            fontColor: "#2380f7"
-          }
-        }]
-      }
-    };
-
     gradientChartOptionsConfigurationWithTooltipPurple = {
       maintainAspectRatio: false,
       legend: {
@@ -182,8 +134,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 10,
-            suggestedMax: 35,
+            suggestedMin: 20,
+            suggestedMax: 30,
             padding: 20,
             fontColor: "#9a9a9a"
           }
@@ -204,7 +156,7 @@ demo = {
       }
     };
 
-    gradientChartOptionsConfigurationWithTooltipOrange = {
+    gradientChartOptionsConfigurationWithTooltipPurple2 = {
       maintainAspectRatio: false,
       legend: {
         display: false
@@ -230,10 +182,10 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 110,
+            suggestedMin: 20,
+            suggestedMax: 30,
             padding: 20,
-            fontColor: "#ff8a76"
+            fontColor: "#9a9a9a"
           }
         }],
 
@@ -241,16 +193,17 @@ demo = {
           barPercentage: 1.6,
           gridLines: {
             drawBorder: false,
-            color: 'rgba(220,53,69,0.1)',
+            color: 'rgba(29,140,248,0.1)',
             zeroLineColor: "transparent",
           },
           ticks: {
             padding: 20,
-            fontColor: "#ff8a76"
+            fontColor: "#9a9a9a"
           }
         }]
       }
     };
+
 
     gradientChartOptionsConfigurationWithTooltipGreen = {
       maintainAspectRatio: false,
@@ -278,8 +231,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 125,
+            suggestedMin: 510,
+            suggestedMax: 590,
             padding: 20,
             fontColor: "#9e9e9e"
           }
@@ -327,8 +280,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 100,
+            suggestedMin: 20,
+            suggestedMax: 40,
             padding: 20,
             fontColor: "#9e9e9e"
           }
@@ -358,9 +311,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'],
       datasets: [{
-        label: "Data",
+        label: "Temperature (°C)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -374,14 +327,14 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [25.87, 24.59, 23.64, 25.41, 26.58, 24.39,25.26],
       }]
     };
 
     var myChart = new Chart(ctx, {
       type: 'line',
       data: data,
-      options: gradientChartOptionsConfigurationWithTooltipPurple
+      options: gradientChartOptionsConfigurationWithTooltipPurple2
     });
 
 
@@ -394,9 +347,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //green colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'],
       datasets: [{
-        label: "My First dataset",
+        label: "Carbon Dioxide (ppm)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -410,7 +363,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: [529, 543, 581, 523, 542, 523, 564],
       }]
     };
 
@@ -423,8 +376,8 @@ demo = {
 
 
 
-    var chart_labels = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
-    var chart_data = [21, 23, 25, 19, 20, 24, 18];
+    var chart_labels = ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'];
+    var chart_data = [40, 42, 46, 40, 41, 43, 39];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
@@ -439,7 +392,7 @@ demo = {
       data: {
         labels: chart_labels,
         datasets: [{
-          label: "My First dataset",
+          label: "Carbon Monoxide (ppm)",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: '#1f8ef1',
@@ -467,7 +420,7 @@ demo = {
     });
     $("#1").click(function() {
       var chart_labels = ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
-      var chart_data = [20, 24, 18, 25];
+      var chart_data = [45, 40, 46, 42];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
@@ -492,9 +445,9 @@ demo = {
         display: false
       },
       data: {
-        labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+        labels: ['WED', 'THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE'],
         datasets: [{
-          label: "Countries",
+          label: "Humidity (%)",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -502,11 +455,86 @@ demo = {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [26, 30, 28, 29, 25, 27, 30],
         }]
       },
       options: gradientBarChartConfiguration
     });
+
+    var chartColors = {
+      red: 'rgb(255, 99, 132)',
+      blue: 'rgb(54, 162, 235)'
+    };
+
+    var color = Chart.helpers.color;
+    var config = {
+      type: 'bar',
+      data: {
+        datasets: [{
+          type: 'line',
+          yAxisID: 'temperature',
+          backgroundColor: 'transparent',
+          borderColor: chartColors.red,
+          pointBackgroundColor: chartColors.red,
+          tension: 0,
+          fill: false
+        }, {
+          yAxisID: 'precipitation',
+          backgroundColor: color(chartColors.blue).alpha(0.5).rgbString(),
+          borderColor: 'transparent'
+        }]
+      },
+      plugins: [ChartDataSource],
+      options: {
+        title: {
+          display: true,
+          text: 'CSV data source (index) sample'
+        },
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: 'Month'
+            }
+          }],
+          yAxes: [{
+            id: 'temperature',
+            gridLines: {
+              drawOnChartArea: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Temperature (°C)'
+            }
+          }, {
+            id: 'precipitation',
+            position: 'right',
+            gridLines: {
+              drawOnChartArea: false
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Precipitation (mm)'
+            }
+          }]
+        },
+        plugins: {
+          datasource: {
+            type: 'csv',
+            url: 'https://gist.githubusercontent.com/mikbuch/32862308f4f5cac8141ad3ae49e0920c/raw/b2b256d69a52dd202668fe0343ded98371a35b15/sample-index.csv',
+            delimiter: ',',
+            rowMapping: 'index',
+            datasetLabels: true,
+            indexLabels: true
+          }
+        }
+      }
+    };
+
+    window.onload = function() {
+      var ctx = document.getElementById('myChart').getContext('2d');
+      window.myChart = new Chart(ctx, config);
+    };
 
   },
   initTemperaturePageCharts: function() {
@@ -537,8 +565,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 20,
+            suggestedMax: 30,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -570,9 +598,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Temperature (°C)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -586,7 +614,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [24.87,25.03,25.07,25.18,25.48,25.7,25.87,25.98,26.01,26.02,25.88,25.93,25.93,25.69,24.85,25.28,25.43,25.32,25.18,25.02,25.31,25.28,25.15,25.3],
       }]
     };
 
@@ -627,8 +655,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 20,
+            suggestedMax: 50,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -660,9 +688,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Carbon Monoxide (ppm)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -676,7 +704,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [40,42,41,40,40,40,40,40,41,43,42,45,39,38,37,38,40,42,41,42,38,37,39,40],
       }]
     };
 
@@ -750,9 +778,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Carbon Dioxide (ppm)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -766,7 +794,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [522, 520, 525, 529, 529, 529, 529, 534, 537, 538, 535, 530, 550, 526, 704, 526, 521, 523, 515, 516, 513, 514, 520, 519],
       }]
     };
 
@@ -800,22 +828,22 @@ demo = {
       responsive: true,
       scales: {
         yAxes: [{
-          barPercentage: 1.6,
+
           gridLines: {
             drawBorder: false,
-            color: 'rgba(29,140,248,0.0)',
+            color: 'rgba(29,140,248,0.1)',
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 0,
+            suggestedMax: 50,
             padding: 20,
-            fontColor: "#2380f7"
+            fontColor: "#9e9e9e"
           }
         }],
 
         xAxes: [{
-          barPercentage: 1.6,
+
           gridLines: {
             drawBorder: false,
             color: 'rgba(29,140,248,0.1)',
@@ -823,7 +851,7 @@ demo = {
           },
           ticks: {
             padding: 20,
-            fontColor: "#2380f7"
+            fontColor: "#9e9e9e"
           }
         }]
       }
@@ -840,9 +868,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Humidity (%)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -856,12 +884,12 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [28, 27, 26, 26, 26, 26, 26, 26, 27, 28, 28, 28, 29, 29, 34, 31, 31, 30, 29, 28, 27, 26, 26, 26],
       }]
     };
 
     var myChart = new Chart(ctx, {
-      type: 'line',
+      type: 'bar',
       data: data,
       options: gradientChartOptionsConfigurationWithTooltipBlue
     });
@@ -897,8 +925,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 10,
+            suggestedMax: 500,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -930,9 +958,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "VOC (ppb)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -946,7 +974,8 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [140, 206, 212, 241, 241, 265, 276, 352, 422, 430, 412, 362, 278, 254, 447, 258, 152, 147, 52, 36, 30, 33, 42,53
+        ],
       }]
     };
 
@@ -987,8 +1016,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 0,
+            suggestedMax: 3,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -1020,9 +1049,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Number of people",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -1036,7 +1065,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       }]
     };
 
@@ -1077,8 +1106,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 0,
+            suggestedMax: 30,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -1110,9 +1139,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Particle Pollution (μg/m3)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -1126,7 +1155,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [10,11,12,15,9,18,7,5,6,4,2,9,10,11,12,12,11,10,10,9,9,8,8,9],
       }]
     };
 
@@ -1167,8 +1196,8 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
+            suggestedMin: 30,
+            suggestedMax: 50,
             padding: 20,
             fontColor: "#2380f7"
           }
@@ -1200,9 +1229,9 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
 
     var data = {
-      labels: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+      labels: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
       datasets: [{
-        label: "Data",
+        label: "Sound Pressure (dB)",
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: '#1f8ef1',
@@ -1216,7 +1245,9 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80, 20],
+        data: [43,
+          45, 44, 44, 44, 44, 44, 44, 45, 44, 44, 44, 53, 44, 52, 44, 42, 44, 44, 44, 43, 43, 43, 43
+        ],
       }]
     };
 
